@@ -24,9 +24,10 @@ const toggleTheme = () => {
     }
 };
 
-themeButton.addEventListener("click", ()=>{
-    toggleTheme()
-}
+themeButton.addEventListener("click", () => {
+    toggleTheme();
+});
+
 // ///////////////////// Show Search /////////////////////////////////////// //
 const searchBtn = document.querySelector(".search_btn");
 const searchContainer = document.querySelector(".search");
