@@ -2,14 +2,25 @@
 const themeButton = document.querySelector(".theme_btn");
 const darkTheme = "dark-theme";
 const iconTheme = 'ri-sun-line';
+const themePreferenceKey = "themePreference";
+
+const setThemePreference = (theme) => {
+    localStorage.setItem(themePreferenceKey, theme);
+};
+
+const getThemePreference = () => {
+    return localStorage.getItem(themePreferenceKey);
+};
 
 themeButton.addEventListener("click",()=>{
     if(document.body.classList.contains(darkTheme)){
         document.body.classList.remove(darkTheme);
         themeButton.classList.remove(iconTheme)
+        setThemePreference("light");
     }else{
         document.body.classList.add(darkTheme);
-        themeButton.classList.add(iconTheme)
+        themeButton.classList.add(iconTheme);
+        setThemePreference("dark");
     }
 })
 
