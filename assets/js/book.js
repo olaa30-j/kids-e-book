@@ -12,7 +12,7 @@ const getThemePreference = () => {
     return localStorage.getItem(themePreferenceKey);
 };
 
-themeButton.addEventListener("click", () => {
+const toggleTheme = () => {
     if (document.body.classList.contains(darkTheme)) {
         document.body.classList.remove(darkTheme);
         themeButton.classList.remove(iconTheme);
@@ -22,9 +22,11 @@ themeButton.addEventListener("click", () => {
         themeButton.classList.add(iconTheme);
         setThemePreference("dark");
     }
-});
+};
 
-
+themeButton.addEventListener("click", ()=>{
+    toggleTheme()
+}
 // ///////////////////// Show Search /////////////////////////////////////// //
 const searchBtn = document.querySelector(".search_btn");
 const searchContainer = document.querySelector(".search");
