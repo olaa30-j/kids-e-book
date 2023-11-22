@@ -12,17 +12,18 @@ const getThemePreference = () => {
     return localStorage.getItem(themePreferenceKey);
 };
 
-themeButton.addEventListener("click",()=>{
-    if(document.body.classList.contains(darkTheme)){
+themeButton.addEventListener("click", () => {
+    if (document.body.classList.contains(darkTheme)) {
         document.body.classList.remove(darkTheme);
-        themeButton.classList.remove(iconTheme)
+        themeButton.classList.remove(iconTheme);
         setThemePreference("light");
-    }else{
+    } else {
         document.body.classList.add(darkTheme);
         themeButton.classList.add(iconTheme);
         setThemePreference("dark");
     }
-})
+});
+
 
 // ///////////////////// Show Search /////////////////////////////////////// //
 const searchBtn = document.querySelector(".search_btn");
